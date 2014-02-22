@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.*;
 
 public class SchedulingPatternTest {
 
@@ -36,4 +37,9 @@ public class SchedulingPatternTest {
 	pattern="* 12 1-15,17,20-25 * *";
 	assertTrue(pattern + "is correct", SchedulingPattern.validate(pattern));
   }
+  
+  @Test
+  public void testForTest(){
+      System.out.println("@Test-testForTest");
+  	}
 }
