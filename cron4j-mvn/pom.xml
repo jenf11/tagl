@@ -20,6 +20,16 @@
 <!-- Dependancies are the imports that java uses.
 	Maven keeps track off all the dependancies in the project in 
 	one central location. -->
+
+<licenses>
+  <license>
+    <name>The Apache Software License, Version 2.0</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <distribution>repo</distribution>
+    <comments>A business-friendly OSS license</comments>
+  </license>
+</licenses>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
