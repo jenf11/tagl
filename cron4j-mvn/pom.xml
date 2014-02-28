@@ -1,19 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.apache.maven.archetypes</groupId>
-  <artifactId>maven-archetype-quickstart</artifactId>
+<!-- groupId: is the name of group usually the company name
+	artifactId: is the name of the project
+	version: is the current version of the project
+	packaging: is the type of file to produce -->
+  <groupId>Groupname</groupId>
+  <artifactId>cron4j-mvn</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>maven-archetype-quickstart</name>
+  <name>cron4j-mvn</name>
   <url>http://maven.apache.org</url>
 
   <properties>
+  <!-- encoding -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+<!-- Dependancies are the imports that java uses.
+	Maven keeps track off all the dependancies in the project in 
+	one central location. -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -22,19 +28,52 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <reporting>
-    <plugins>
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		
       <plugin>
+      <!-- Below is the plugin for corbertura. It is a tool that creates
+      a report to let you know how much of your code was accessed by the tests.
+      This helps you to maybe identify places in your code that you need to pay 
+      more attention to. The resulting report is found in target/site/cobertura.
+      Can be run from the command line with  mvn cobertura:cobertura -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
         <version>2.6</version>
-        <configuration>
+       
+            <configuration>
           <formats>
             <format>html</format>
             <format>xml</format>
           </formats>
         </configuration>
+        <executions>
+             	 <execution>
+        <phase>package</phase>
+        <goals>
+           	 <goal>cobertura</goal>
+        </goals>
+        </execution>
+    </executions>
+ 
+
+       
+        
+       
       </plugin>
-    </plugins>
-  </reporting>
+	</plugins>
+	</build>
+  
 </project>
