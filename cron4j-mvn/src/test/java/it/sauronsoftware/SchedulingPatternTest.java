@@ -42,4 +42,5 @@ public class SchedulingPatternTest {
   public void testForTest(){
       System.out.println("@Test-testForTest");
   	}
+
 }
