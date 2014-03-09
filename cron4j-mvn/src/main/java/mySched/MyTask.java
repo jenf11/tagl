@@ -24,6 +24,16 @@ import java.util.Date;
  */
 public class MyTask implements Runnable {
 
+    /**
+     * The task id.
+     * public as it's immutable.
+     */
+    public final String id;
+
+    public MyTask(String id) {
+        this.id = id;
+    }
+
 	public void run() {
 		System.out.println("Current system time: " + new Date());
 		System.out.println("Another minute ticked away...");

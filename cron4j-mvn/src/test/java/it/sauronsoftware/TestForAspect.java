@@ -14,7 +14,7 @@ import org.junit.Test;
 
 import java.util.*;
 
-public class MyTestForAspect {
+public class TestForAspect {
 
     @BeforeClass
     public static void testSetup() {
@@ -50,7 +50,7 @@ public class MyTestForAspect {
     public void run() {
         System.out.println("@Test-run");
         // Prepares the task.
-        MyTask task = new MyTask();
+        MyTask task = new MyTask("task");
         // Creates the scheduler.
         Scheduler scheduler = new Scheduler();
         // Schedules the task, once every minute.

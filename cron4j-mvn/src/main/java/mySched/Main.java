@@ -22,7 +22,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Prepares the task.
-		MyTask task = new MyTask();
+		MyTask task = new MyTask("test");
 		// Creates the scheduler.
 		Scheduler scheduler = new Scheduler();
 		// Schedules the task, once every minute.
